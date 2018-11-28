@@ -21,19 +21,19 @@ M11并发处理节点，用于启用备用资源，通过增加数量分流实�
 
 #### W45：[通道扩展](https://github.com/OS-Q/W45)
 
-扩展通信通道和带宽
+扩展相应通信通道，增加并发量
 
-#### W46：[群组优化](https://github.com/OS-Q/W46)
+#### W46：[角色优化](https://github.com/OS-Q/W46)
 
-优化群组角色分配和定义
+优化群组内的角色分配和定义
 
 #### W47：[算力增强](https://github.com/OS-Q/W47)
 
-提高群组的算力
+提高个体的算力
 
 #### W48：[功能补强](https://github.com/OS-Q/W48)
 
-更精细的性能优化
+更精细个体性能优化
 
 
 ## [同级节点](https://github.com/OS-Q/M11/wiki/index)
