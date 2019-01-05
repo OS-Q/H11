@@ -2,7 +2,7 @@
 
 [![sites](OS-Q/OS-Q.png)](http://www.OS-Q.com)
 
-#### 归属设备体系：[Q4](https://github.com/OS-Q/Q4)
+#### 归属弹性计算：[Q4](https://github.com/OS-Q/Q4)
 
 #### 关于系统架构：[OS-Q](https://github.com/OS-Q/OS-Q)
 
@@ -10,53 +10,54 @@
 
 M11资源构建节点，用于初始化构建和准备相关资源
 
-### [共用资源](https://github.com/OS-Q/M11/wiki/src) 
+### [共用资源](OS-Q/)
 
 
 ---
 
-边缘设备命名规则：体系 Q[1,4] > 节点 M[1,12] > 平台 W[1,52] > 设备 D[1,365]。
+- 边缘设备命名规则：体系 Q:[1,4] -> 节点 M:[1,12] -> 平台 W:[1,52] -> 设备 D:[1,365]
 
-## [包含平台](https://github.com/OS-Q/M11/wiki/index) 
+- naming patterns：system Q[1,4] -> node M[1,12] -> platform W[1,52] -> device D[1,365]
 
-#### W44：[编译平台](https://github.com/OS-Q/W44)
+## [包含平台](https://github.com/OS-Q/M11/wiki) 
 
+#### W44：[编译测试](https://github.com/OS-Q/W44)
 
+各种开源资源的编译和测试
 
 #### W45：[训练平台](https://github.com/OS-Q/W45)
 
+各种深度模型的训练
 
+#### W46：[电气仿真](https://github.com/OS-Q/W46)
 
-#### W46：[仿真平台](https://github.com/OS-Q/W46)
+各种硬件测试和仿真
 
+#### W47：[数据收集](https://github.com/OS-Q/W47)
 
+各种数据集的收集整理
 
-#### W47：[测试平台](https://github.com/OS-Q/W47)
+#### W48：[递归优化](https://github.com/OS-Q/W48)
 
+递归迭代各种资源，自动修正和优化
 
+## [同级节点](https://github.com/OS-Q/Q4/wiki/) 
 
-#### W48：[递归平台](https://github.com/OS-Q/W48)
+#### M10：[中心连接](https://github.com/OS-Q/M10) 
 
+通过中心服务器跨域连接各个节点，沟通数据
 
+#### [M11：资源构建](https://github.com/OS-Q/M11)
 
+用于资源构建，包括源码编译模型训练和测试
 
-## [同级节点](https://github.com/OS-Q/M11/wiki/index)
+#### M12：[算力支撑](https://github.com/OS-Q/M12)
 
-#### M10：[并发处理](https://github.com/OS-Q/M10) 
-
-用于完成需求资源的初始构建，例如源码编译和模型训练
-
-#### -> M11：[资源构建](https://github.com/OS-Q/M11)
-
-用于处理特殊状态下的大量事件，扩展相应短板性能
-
-#### M12：[深度加速](https://github.com/OS-Q/M12)
-
-对于庞大、有时限和算力门槛的状态提供算力辅助
-
+大规模算力突破时限和算力门槛完成相应任务
 
 ---
 
-###  [Q redefined the scope of Operation System](http://www.OS-Q.com)
-###  qitas@qitas.cn
-###  2018-11-29
+####  © qitas@qitas.cn
+###  [OS-Q redefined Operation System](http://www.OS-Q.com)
+####  @ 2019-1-5
+
