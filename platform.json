@@ -3,7 +3,7 @@
   "title": "H5",
   "description": "TIVA开发平台",
   "homepage": "https://github.com/OS-Q/H5",
-  "license": "Apache-2.0",
+  "license": " ",
   "engines": {
     "platformio": "<5"
   },
@@ -18,10 +18,6 @@
   ],
   "frameworks": {
     "arduino": {
-      "package": "framework-N8",
-      "script": "builder/frameworks/energia.py"
-    },
-    "energia": {
       "package": "framework-N8",
       "script": "builder/frameworks/energia.py"
     },
