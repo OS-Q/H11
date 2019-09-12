@@ -31,8 +31,8 @@ from SCons.Script import DefaultEnvironment
 env = DefaultEnvironment()
 platform = env.PioPlatform()
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-energiativa")
-FRAMEWORK_VERSION = platform.get_package_version("framework-energiativa")
+FRAMEWORK_DIR = platform.get_package_dir("framework-N8")
+FRAMEWORK_VERSION = platform.get_package_version("framework-N8")
 assert isdir(FRAMEWORK_DIR)
 
 
