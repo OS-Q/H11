@@ -19,7 +19,7 @@
   "frameworks": {
     "arduino": {
       "package": "framework-N8",
-      "script": "builder/frameworks/energia.py"
+      "script": "builder/frameworks/arduino.py"
     },
     "libopencm3": {
       "package": "framework-N4",
