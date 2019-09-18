@@ -6,9 +6,5 @@
 
 [Platform H5](https://github.com/OS-Q/H5)基于 PlatformIO开发平台，用于对TI TIVA系列进行开发
 
-### [关联资源](https://github.com/OS-Q/)
-
- *  [M3](https://github.com/OS-Q/M3) 
-
 ### [OS-Q = Open Solutions | Open Source |  Operating System ](http://www.OS-Q.com/H5)
 ####  2019-9-6
