@@ -17,8 +17,8 @@ from SCons.Script import DefaultEnvironment
 env = DefaultEnvironment()
 platform = env.PioPlatform()
 
-FRAMEWORK_DIR = platform.get_package_dir("framework-N8")
-FRAMEWORK_VERSION = "1.1.0"#platform.get_package_version("framework-N8")
+FRAMEWORK_DIR = platform.get_package_dir("framework-N24")
+FRAMEWORK_VERSION = "1.0.0"#platform.get_package_version("framework-N24")
 assert isdir(FRAMEWORK_DIR)
 
 
