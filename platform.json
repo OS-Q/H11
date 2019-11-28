@@ -18,22 +18,23 @@
     "http://182.61.61.133/link/framework/manifest.json",
     "http://182.61.61.133/link/platformio.json",
     "http://182.61.61.133/link/platform.json",
-    "https://dl.bintray.com/platformio/dl-packages/manifest.json",
-    "http://dl.platformio.org/packages/manifest.json"
+    "http://dl.platformio.org/packages/manifest.json",
+    "https://dl.bintray.com/platformio/dl-packages/manifest.json"
+
   ],
   "frameworks": {
-    "arduino": {
-      "package": "framework-N24",
-      "script": "builder/frameworks/energia.py"
-    },
-    "energia": {
-      "package": "framework-N24",
-      "script": "builder/frameworks/energia.py"
-    },
-    "libopencm3": {
-      "package": "framework-N4",
-      "script": "builder/frameworks/libopencm3/libopencm3.py"
-    }
+      "arduino": {
+        "package": "framework-N24",
+        "script": "builder/frameworks/energia.py"
+      },
+      "energia": {
+        "package": "framework-N24",
+        "script": "builder/frameworks/energia.py"
+      },
+      "libopencm3": {
+        "package": "framework-N4",
+        "script": "builder/frameworks/libopencm3/libopencm3.py"
+      }
   },
   "framework-N4": {
     "type": "framework",
@@ -48,7 +49,7 @@
     "packages": {
       "toolchain-gccarmnoneeabi": {
         "type": "toolchain",
-        "version": ">1.60000.0,<1.80000.0"
+        "version": ">=1.40803.0,<1.40805.0"
       },
     "tool-openocd": {
       "type": "uploader",
