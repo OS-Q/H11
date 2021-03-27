@@ -1,15 +1,36 @@
-﻿# [Platform H10](https://github.com/OS-Q/H10)
+# TI TIVA: development platform for [PlatformIO](http://platformio.org)
 
-[![sites](http://182.61.61.133/link/resources/OSQ.png)](http://www.OS-Q.com)
+[![Build Status](https://github.com/platformio/platform-titiva/workflows/Examples/badge.svg)](https://github.com/platformio/platform-titiva/actions)
 
-#### 关于系统架构：[OS-Q](https://github.com/OS-Q)
-#### 归属边缘体系：[EDGE-Q](https://github.com/EDGE-Q)
+Texas Instruments TM4C12x MCUs offer the industrys most popular ARM Cortex-M4 core with scalable memory and package options, unparalleled connectivity peripherals, advanced application functions, industry-leading analog integration, and extensive software solutions.
 
-[EDGE-Q](https://github.com/OS-Q/EDGE-Q) -> Q[4] -> M[12] -> W[52] -> D[365] -> H[24] -> N[60] -> S[60]
+* [Home](http://platformio.org/platforms/titiva) (home page in PlatformIO Platform Registry)
+* [Documentation](http://docs.platformio.org/page/platforms/titiva.html) (advanced usage, packages, boards, frameworks, etc.)
 
-### [Platform描述](https://github.com/OS-Q/H10/wiki) 
+# Usage
 
-[Platform H10](https://github.com/OS-Q/H10)基于PlatformIO平台，用于TIVA系列SoC软件开发。
+1. [Install PlatformIO](http://platformio.org)
+2. Create PlatformIO project and configure a platform option in [platformio.ini](http://docs.platformio.org/page/projectconf.html) file:
 
-### [OS-Q = Open Solutions | Open Source |  Operating System ](http://www.OS-Q.com/H10)
-####  2019-9-6
+## Stable version
+
+```ini
+[env:stable]
+platform = titiva
+board = ...
+...
+```
+
+## Development version
+
+```ini
+[env:development]
+platform = https://github.com/platformio/platform-titiva.git
+board = ...
+...
+```
+
+# Configuration
+
+Please navigate to [documentation](http://docs.platformio.org/page/platforms/titiva.html).
+
