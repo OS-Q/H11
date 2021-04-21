@@ -129,10 +129,15 @@ jobs:
           pip install -U https://github.com/OS-Q/S03/releases/latest/download/S03.zip
           pio platform install file://.
 
+      - name: Build
+        working-directory: examples
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          mkdir ${{ matrix.example }}/build_3
+
       - name: Build examples
         working-directory: examples
         run: |
-          mkdir ${{ matrix.example }}/build_3
           pio run -d ${{ matrix.example }} >> ${{ matrix.example }}/build_3/log.txt
           cp -f ${{ matrix.example }}/.*io/build/**/*.bin  ${{ matrix.example }}/build_3/
 
