@@ -21,11 +21,11 @@
   "frameworks": {
     "arduino": {
       "package": "A29A",
-      "script": "builder/arduino.py"
+      "script": "extend/arduino.py"
     },
     "energia": {
       "package": "A29A",
-      "script": "builder/arduino.py"
+      "script": "extend/arduino.py"
     },
     "libopencm3": {
       "package": "framework-libopencm3",
