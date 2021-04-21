@@ -28,17 +28,16 @@ jobs:
           # - "examples/libopencm3-usb-cdcacm"
           # - "examples/native-blink"
         os: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: [3.9]
 
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
         with:
           submodules: "recursive"
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python
         uses: actions/setup-python@v1
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.9
 
       - name: Install PIO
         run: |
@@ -49,16 +48,15 @@ jobs:
       - name: Build examples
         working-directory: examples
         run: |
-          mkdir ${{ matrix.example }}/build_1
-          pio run -d ${{ matrix.example }} >> ${{ matrix.example }}/build_1/log.txt
-          cp -f ${{ matrix.example }}/.*io/build/**/*.bin  ${{ matrix.example }}/build_1/
+          pio run -d ${{ matrix.example }} >> ${{ matrix.example }}/log.txt
+
 
       - name: Upload
         if: env.UPLOAD_BUILD
         uses: actions/upload-artifact@v2
         with:
           name: PIO_P29_${{ matrix.example }}
-          path: examples/${{ matrix.example }}/build_1
+          path: examples/${{ matrix.example }}
 
   latest:
     strategy:
@@ -92,16 +90,14 @@ jobs:
       - name: Build examples
         working-directory: examples
         run: |
-          mkdir ${{ matrix.example }}/build_2
-          pio run -d ${{ matrix.example }} >> ${{ matrix.example }}/build_2/log.txt
-          cp -f ${{ matrix.example }}/.*io/build/**/*.bin  ${{ matrix.example }}/build_2/
+          pio run -d ${{ matrix.example }} >> ${{ matrix.example }}/log.txt
 
       - name: Upload
         if: env.UPLOAD_BUILD
         uses: actions/upload-artifact@v2
         with:
           name: QIO_P29_${{ matrix.example }}
-          path: examples/${{ matrix.example }}/build_2
+          path: examples/${{ matrix.example }}/
 
   release:
     strategy:
@@ -129,21 +125,15 @@ jobs:
           pip install -U https://github.com/OS-Q/S03/releases/latest/download/S03.zip
           pio platform install file://.
 
-      - name: Build
-        working-directory: examples
-        if: matrix.os == 'ubuntu-latest'
-        run: |
-          mkdir ${{ matrix.example }}/build_3
-
       - name: Build examples
         working-directory: examples
         run: |
-          pio run -d ${{ matrix.example }} >> ${{ matrix.example }}/build_3/log.txt
-          cp -f ${{ matrix.example }}/.*io/build/**/*.bin  ${{ matrix.example }}/build_3/
+          pio run -d ${{ matrix.example }} >> ${{ matrix.example }}/log.txt
+          # cp -f ${{ matrix.example }}/.*io/build/**/*.bin  ${{ matrix.example }}/
 
       - name: Upload
         if: env.UPLOAD_BUILD
         uses: actions/upload-artifact@v2
         with:
           name: P29_${{ matrix.example }}
-          path: examples/${{ matrix.example }}/build_3
+          path: examples/${{ matrix.example }}/
