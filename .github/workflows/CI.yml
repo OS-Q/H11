@@ -21,9 +21,9 @@ jobs:
       fail-fast: false
       matrix:
         example:
-          - "examples/native-blink"
-          - "examples/arduino-blink"
-          - "examples/arduino-internal-libs"
+          - "native-blink"
+          - "arduino-blink"
+          - "arduino-internal-libs"
           # - "examples/libopencm3-blink"
           # - "examples/libopencm3-usb-cdcacm"
           # - "examples/native-blink"
@@ -47,26 +47,27 @@ jobs:
           platformio platform install file://.
 
       - name: Build examples
+        working-directory: examples
         run: |
-          mkdir ${{ matrix.example }}/build
-          pio run -d ${{ matrix.example }} >> ${{ matrix.example }}/build/log.txt
-          cp ${{ matrix.example }}/.*io/build/**/*.bin  ${{ matrix.example }}/build/
+          mkdir ${{ matrix.example }}/build_1
+          pio run -d ${{ matrix.example }} >> ${{ matrix.example }}/build_1/log.txt
+          cp -f ${{ matrix.example }}/.*io/build/**/*.bin  ${{ matrix.example }}/build_1/
 
       - name: Upload
         if: env.UPLOAD_BUILD
         uses: actions/upload-artifact@v2
         with:
-          name: PIO_P29
-          path: ${{ matrix.example }}/build
+          name: PIO_P29_${{ matrix.example }}
+          path: examples/${{ matrix.example }}/build_1
 
   latest:
     strategy:
       fail-fast: false
       matrix:
         example:
-          - "examples/native-blink"
-          - "examples/arduino-blink"
-          - "examples/arduino-internal-libs"
+          - "native-blink"
+          - "arduino-blink"
+          - "arduino-internal-libs"
           # - "examples/libopencm3-blink"
           # - "examples/libopencm3-usb-cdcacm"
 
@@ -89,26 +90,27 @@ jobs:
           pio platform install file://.
 
       - name: Build examples
+        working-directory: examples
         run: |
-          mkdir ${{ matrix.example }}/build
-          pio run -d ${{ matrix.example }} >> ${{ matrix.example }}/build/log.txt
-          cp ${{ matrix.example }}/.*io/build/**/*.bin  ${{ matrix.example }}/build/
+          mkdir ${{ matrix.example }}/build_2
+          pio run -d ${{ matrix.example }} >> ${{ matrix.example }}/build_2/log.txt
+          cp -f ${{ matrix.example }}/.*io/build/**/*.bin  ${{ matrix.example }}/build_2/
 
       - name: Upload
         if: env.UPLOAD_BUILD
         uses: actions/upload-artifact@v2
         with:
-          name: QIO_P29
-          path: ${{ matrix.example }}/build
+          name: QIO_P29_${{ matrix.example }}
+          path: examples/${{ matrix.example }}/build_2
 
   release:
     strategy:
       fail-fast: false
       matrix:
         example:
-          - "examples/native-blink"
-          - "examples/arduino-blink"
-          - "examples/arduino-internal-libs"
+          - "native-blink"
+          - "arduino-blink"
+          - "arduino-internal-libs"
         os: [ubuntu-latest, windows-latest, macos-latest]
 
     runs-on: ${{ matrix.os }}
@@ -128,14 +130,15 @@ jobs:
           pio platform install file://.
 
       - name: Build examples
+        working-directory: examples
         run: |
-          mkdir ${{ matrix.example }}/build
-          pio run -d ${{ matrix.example }} >> ${{ matrix.example }}/build/log.txt
-          cp ${{ matrix.example }}/.*io/build/**/*.bin  ${{ matrix.example }}/build/
+          mkdir ${{ matrix.example }}/build_3
+          pio run -d ${{ matrix.example }} >> ${{ matrix.example }}/build_3/log.txt
+          cp -f ${{ matrix.example }}/.*io/build/**/*.bin  ${{ matrix.example }}/build_3/
 
       - name: Upload
         if: env.UPLOAD_BUILD
         uses: actions/upload-artifact@v2
         with:
-          name: P29
-          path: ${{ matrix.example }}/build
+          name: P29_${{ matrix.example }}
+          path: examples/${{ matrix.example }}/build_3
