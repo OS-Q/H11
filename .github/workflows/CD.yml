@@ -19,9 +19,6 @@ jobs:
           - "native-blink"
           - "arduino-blink"
           - "arduino-internal-libs"
-          # - "examples/libopencm3-blink"
-          # - "examples/libopencm3-usb-cdcacm"
-          # - "examples/native-blink"
 
     steps:
       - uses: actions/checkout@v2
@@ -143,9 +140,9 @@ jobs:
         id: OSS
         run: |
           cp package.zip P29.zip
-          cp package.zip P16_${GITHUB_REF/refs\/tags\//}.zip
+          cp package.zip P29_${GITHUB_REF/refs\/tags\//}.zip
           ossutil cp ${{ env.FIRMWARE }}/P29.zip ${{ secrets.OSS_P_BUCKET }} -rf
-          ossutil cp ${{ env.FIRMWARE }}/P16_${GITHUB_REF/refs\/tags\//}.zip ${{ secrets.OSS_P_BUCKET }} -f
+          ossutil cp ${{ env.FIRMWARE }}/P29_${GITHUB_REF/refs\/tags\//}.zip ${{ secrets.OSS_P_BUCKET }} -f
           echo "::set-output name=status::success"
 
   release_pass:
