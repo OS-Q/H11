@@ -6,7 +6,7 @@
 [![Build Status](https://circleci.com/gh/OS-Q/P29.svg?style=svg)](https://circleci.com/gh/OS-Q/P29)
 [![Build Status](https://travis-ci.com/OS-Q/P29.svg?branch=master)](https://travis-ci.com/OS-Q/P29)
 [![Build Status](https://cloud.drone.io/api/badges/OS-Q/P29/status.svg)](https://cloud.drone.io/OS-Q/P29)
-[![Build status](https://ci.appveyor.com/api/projects/status/p08jsu3nvloyo7pu?svg=true)](https://ci.appveyor.com/project/Qitas/P29)
+[![Build status](https://ci.appveyor.com/api/projects/status/hbkbxwxsay1whbfq?svg=true)](https://ci.appveyor.com/project/Qitas/p29)
 
 ### [简介](https://github.com/OS-Q/P29/wiki)
 
