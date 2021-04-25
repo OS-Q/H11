@@ -1,36 +1,15 @@
-# TI TIVA: development platform for [PlatformIO](http://platformio.org)
+﻿# [P29](https://github.com/OS-Q/P29)
 
-[![Build Status](https://github.com/platformio/platform-titiva/workflows/Examples/badge.svg)](https://github.com/platformio/platform-titiva/actions)
+[![sites](http://182.61.61.133/link/resources/OSQ.png)](http://www.OS-Q.com)
 
-Texas Instruments TM4C12x MCUs offer the industrys most popular ARM Cortex-M4 core with scalable memory and package options, unparalleled connectivity peripherals, advanced application functions, industry-leading analog integration, and extensive software solutions.
+[![Build Status](https://github.com/OS-Q/P29/workflows/CI/badge.svg)](https://github.com/OS-Q/P29/actions/workflows/CI.yml)
+[![Build Status](https://circleci.com/gh/OS-Q/P29.svg?style=svg)](https://circleci.com/gh/OS-Q/P29)
+[![Build Status](https://travis-ci.com/OS-Q/P29.svg?branch=master)](https://travis-ci.com/OS-Q/P29)
+[![Build Status](https://cloud.drone.io/api/badges/OS-Q/P29/status.svg)](https://cloud.drone.io/OS-Q/P29)
+[![Build status](https://ci.appveyor.com/api/projects/status/p08jsu3nvloyo7pu?svg=true)](https://ci.appveyor.com/project/Qitas/P29)
 
-* [Home](http://platformio.org/platforms/titiva) (home page in PlatformIO Platform Registry)
-* [Documentation](http://docs.platformio.org/page/platforms/titiva.html) (advanced usage, packages, boards, frameworks, etc.)
+### [简介](https://github.com/OS-Q/P29/wiki)
 
-# Usage
+[P29](https://github.com/OS-Q/P29)
 
-1. [Install PlatformIO](http://platformio.org)
-2. Create PlatformIO project and configure a platform option in [platformio.ini](http://docs.platformio.org/page/projectconf.html) file:
-
-## Stable version
-
-```ini
-[env:stable]
-platform = titiva
-board = ...
-...
-```
-
-## Development version
-
-```ini
-[env:development]
-platform = https://github.com/platformio/platform-titiva.git
-board = ...
-...
-```
-
-# Configuration
-
-Please navigate to [documentation](http://docs.platformio.org/page/platforms/titiva.html).
-
+### [源圈 OS-Q (Open Source & QA) ](http://www.OS-Q.com)
