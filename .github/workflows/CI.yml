@@ -58,9 +58,8 @@ jobs:
           - "native-blink"
           - "arduino-blink"
           - "arduino-internal-libs"
-          # - "examples/libopencm3-blink"
-          # - "examples/libopencm3-usb-cdcacm"
-          # - "examples/native-blink"
+          - "libopencm3-blink"
+          - "libopencm3-usb-cdcacm"
 
         os: [ubuntu-latest, windows-latest, macos-latest]
 
@@ -139,9 +138,8 @@ jobs:
           - "native-blink"
           - "arduino-blink"
           - "arduino-internal-libs"
-          # - "examples/libopencm3-blink"
-          # - "examples/libopencm3-usb-cdcacm"
-          # - "examples/native-blink"
+          - "libopencm3-blink"
+          - "libopencm3-usb-cdcacm"
 
         os: [ubuntu-latest, windows-latest, macos-latest]
 
