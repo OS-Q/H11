@@ -4,13 +4,15 @@ on:
   push:
     branches:
       - pio
-    paths-ignore:
-      - '**.md'
-      - '**/CD.yml'
-      - '**/nightly.yml'
+    paths:
+      - 'boards/**'
+      - 'misc/**'
+      - 'builder/**'
+      - 'ldscripts/**'
+      - 'examples/**'
+      - 'platform.json'
+      - 'platform.py'
 
-env:
-  UPLOAD_BUILD: true
 
 jobs:
   CodeCheck:
@@ -82,50 +84,8 @@ jobs:
           pio platform install file://.
 
       - name: Build examples
-        id: build
-        if: success()
         working-directory: examples
         run: |
           pio run -d ${{ matrix.example }}
-          echo "::set-output name=status::success"
 
-      - name: Upload
-        if: env.UPLOAD_BUILD
-        uses: actions/upload-artifact@v2
-        with:
-          name: pio_${{ matrix.example }}_${{ matrix.os }}
-          path: examples/${{ matrix.example }}/.pio/build
 
-  pio_pass:
-    needs:
-      - PIO
-    if: success()
-    runs-on: ubuntu-latest
-    steps:
-      - name: notification
-        uses: Qful/mqtt-action@master
-        with:
-          protocol: mqtt
-          host: ${{secrets.MQTT_SERVER}}
-          port: 1883
-          username: ${{secrets.MQTT_USERNAME}}
-          password: ${{secrets.MQTT_PASSWORD}}
-          topic: ${{github.repository}}/${{github.workflow}}
-          message: "PIO success"
-
-  pio_fail:
-    needs:
-      - PIO
-    if: failure()
-    runs-on: ubuntu-latest
-    steps:
-      - name: notification
-        uses: Qful/mqtt-action@master
-        with:
-          protocol: mqtt
-          host: ${{secrets.MQTT_SERVER}}
-          port: 1883
-          username: ${{secrets.MQTT_USERNAME}}
-          password: ${{secrets.MQTT_PASSWORD}}
-          topic: ${{github.repository}}/${{github.workflow}}
-          message: "PIO failure"
